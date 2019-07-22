@@ -13,13 +13,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Up");
             rb2d.velocity = Vector2.zero;
-            rb2d.AddForce(transform.up * upMovement);
+            rb2d.AddForce(transform.up * upMovement, ForceMode2D.Impulse);
         }
     }
 }
