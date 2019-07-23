@@ -6,16 +6,17 @@ public class GameManager : MonoBehaviour
 {
     [Header("Player Control")]
     public GameObject playerObj;
+    public static float scrollAmount;
     public static float scrollValue;
     public float scrollSpeed;
-    [Header("Enemy Control")]
-    public GameObject[] enemyObjs;
-    public float rateCtrl = 2;
+
+    [Header("Stage Control")]
+    public Stage[] stageList;
     float spawnX;
-    [SerializeField]float nextSpawnTime;
+    int currentStage;
+    [SerializeField]float nextSpawnPoint;
     [SerializeField]Transform movablesParent;
     
-
     void Start()
     {
         spawnX = Screen.width/10 + Screen.width;
@@ -24,8 +25,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        scrollValue = Time.deltaTime * scrollSpeed;
-        if(Time.time > nextSpawnTime)SpawnEnemies();
+        scrollAmount = Time.deltaTime * scrollSpeed;
+        scrollValue += scrollAmount;
+        if(scrollValue > nextSpawnPoint)SpawnObstacles();
     }
 
     void SpawnPlayer()
@@ -34,13 +36,16 @@ public class GameManager : MonoBehaviour
         Instantiate(playerObj, pos, Quaternion.identity);
     }
 
-    void SpawnEnemies()
-    {
-        float yVal = Random.Range(1, 9) * Screen.height/10;
-        Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(spawnX, yVal, 1));
-        GameObject obj = Instantiate(enemyObjs[0], pos, Quaternion.identity, movablesParent);
 
-        nextSpawnTime = Time.time + 1/rateCtrl;
+
+    void SpawnObstacles()
+    {
+        float yVal = Random.Range(3, 10) * Screen.height/10;
+        Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(spawnX, yVal, 1));
+        SpawnableStaticObjectData spawnableObj = stageList[currentStage].GetObject();
+        GameObject obj = Instantiate(spawnableObj.spawnableObject, pos, Quaternion.identity, movablesParent);
+
+        nextSpawnPoint = scrollValue + spawnableObj.intervel;
     }
 
 }
