@@ -151,6 +151,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerObj: {fileID: 922234182371550654, guid: 9595f822dff0dc543aa3d821fd2b9586,
     type: 3}
+  scrollSpeed: 5
+  enemyObjs:
+  - {fileID: 6411324258744436024, guid: e08e5339ec47625419b934f42d3fead9, type: 3}
+  rateCtrl: 0.2
+  nextSpawnTime: 0
 --- !u!4 &1142249275
 Transform:
   m_ObjectHideFlags: 0
