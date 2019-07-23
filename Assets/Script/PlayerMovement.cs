@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float upMovement;
+    float upMovement = 4; 
     Rigidbody2D rb2d;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb2d.velocity = Vector2.zero;
-            rb2d.AddForce(transform.up * upMovement);
+            rb2d.AddForce(transform.up * upMovement, ForceMode2D.Impulse);
         }
     }
 }
