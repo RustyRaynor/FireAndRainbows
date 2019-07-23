@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public float rateCtrl = 2;
     float spawnX;
     [SerializeField]float nextSpawnTime;
+    [SerializeField]Transform movablesParent;
     
 
     void Start()
@@ -37,7 +38,7 @@ public class GameManager : MonoBehaviour
     {
         float yVal = Random.Range(1, 9) * Screen.height/10;
         Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(spawnX, yVal, 1));
-        GameObject obj = Instantiate(enemyObjs[0], pos, Quaternion.identity);
+        GameObject obj = Instantiate(enemyObjs[0], pos, Quaternion.identity, movablesParent);
 
         nextSpawnTime = Time.time + 1/rateCtrl;
     }
