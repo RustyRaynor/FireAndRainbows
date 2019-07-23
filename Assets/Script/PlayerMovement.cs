@@ -17,9 +17,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Up");
             rb2d.velocity = Vector2.zero;
-            rb2d.AddForce(transform.up * upMovement, ForceMode2D.Impulse);
+            rb2d.AddForce(transform.up * upMovement);
         }
     }
 }
