@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float upMovement; // 4 is best 
+    public float upMovement; // 6 is best 
     Rigidbody2D rb2d;
     // Start is called before the first frame update
     void Start()
