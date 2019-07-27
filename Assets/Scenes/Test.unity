@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6332c96b06ff02b428777d72c5c564c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  troubleChance: 50
+  troubleChance: 80
   troubleItems:
   - spawnableObject: {fileID: 6411324258744436024, guid: e08e5339ec47625419b934f42d3fead9,
       type: 3}
