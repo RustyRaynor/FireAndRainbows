@@ -5,7 +5,7 @@ using UnityEngine;
 public class LaserScript : MonoBehaviour
 {
     Rigidbody2D rb2d;
-    public float force;
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,10 +13,10 @@ public class LaserScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Debug.Log("Move");
-        rb2d.AddForce(transform.right * force);
+        transform.position += Vector3.right * speed;
         BoundaryCheck();
     }
     void BoundaryCheck()
