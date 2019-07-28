@@ -19,7 +19,7 @@ public class ObjectScroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        value = -Vector2.right * GameManager.scrollAmount * speed * Time.deltaTime;
+        value = -Vector2.right * GameManager.scrollAmount * speed;
         rigidbody.velocity = value;
         if(transform.position.x + destroyOffset < -limitWorldX)Destroy(gameObject);
     }

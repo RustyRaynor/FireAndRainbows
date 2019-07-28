@@ -262,7 +262,12 @@ MonoBehaviour:
   stageList:
   - {fileID: 1142249276}
   nextSpawnPoint: 0
+  enemyTestObj: {fileID: 3895753096219698623, guid: 449b488f86a1986449d8d0e5da1b54a4,
+    type: 3}
+  nextEnemySpawnPoint: 30
   movablesParent: {fileID: 1490596980}
+  enemySpawnState: 0
+  enemySpawnPeriod: 0
 --- !u!4 &1142249275
 Transform:
   m_ObjectHideFlags: 0
@@ -306,6 +311,11 @@ MonoBehaviour:
   - spawnableObject: {fileID: 3059583242649780185, guid: a49e48b8d82a6c8428298304faa83318,
       type: 3}
     intervel: 20
+  movingTankEnemy: {fileID: 3895753096219698623, guid: 449b488f86a1986449d8d0e5da1b54a4,
+    type: 3}
+  shooterEnemy: {fileID: 3081922984709271329, guid: 362eeaea178f2404897712a9969859b2,
+    type: 3}
+  spawnX: 0
 --- !u!1 &1185843964
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +393,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185843964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -520,7 +530,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ca84064a997fcbf48abb9903735f6953, type: 3}
-  m_Color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
