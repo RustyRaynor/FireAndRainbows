@@ -261,13 +261,8 @@ MonoBehaviour:
   scrollSpeed: 5
   stageList:
   - {fileID: 1142249276}
-  nextSpawnPoint: 0
-  enemyTestObj: {fileID: 3895753096219698623, guid: 449b488f86a1986449d8d0e5da1b54a4,
-    type: 3}
   nextEnemySpawnPoint: 30
   movablesParent: {fileID: 1490596980}
-  enemySpawnState: 0
-  enemySpawnPeriod: 0
 --- !u!4 &1142249275
 Transform:
   m_ObjectHideFlags: 0
@@ -297,20 +292,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   troubleChance: 80
-  troubleItems:
-  - spawnableObject: {fileID: 6411324258744436024, guid: e08e5339ec47625419b934f42d3fead9,
-      type: 3}
-    intervel: 10
-  goodItems:
-  - spawnableObject: {fileID: 2475215172060871238, guid: 90fa59e7b728a1e4dbddb9fab16ec97b,
-      type: 3}
-    intervel: 10
-  - spawnableObject: {fileID: 2616326751043689738, guid: a02026358a3ea9443a8585b3233df1ea,
-      type: 3}
-    intervel: 20
-  - spawnableObject: {fileID: 3059583242649780185, guid: a49e48b8d82a6c8428298304faa83318,
-      type: 3}
-    intervel: 20
   movingTankEnemy: {fileID: 3895753096219698623, guid: 449b488f86a1986449d8d0e5da1b54a4,
     type: 3}
   shooterEnemy: {fileID: 3081922984709271329, guid: 362eeaea178f2404897712a9969859b2,

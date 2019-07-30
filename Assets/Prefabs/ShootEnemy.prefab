@@ -185,16 +185,17 @@ MonoBehaviour:
   limitWorldX: 1
   destroyOffset: 1
   maxFire: 20
-  zigzagRate: 2
+  zigzagRate: 1
   zigzagRange: 80
   moveSpeed: 50
   exitSpeed: 200
   targetX: 5
-  fireRate: 1
-  nextFireFrequency: 2
+  fireRate: 50
+  nextFireFrequency: 1
   bullet: {fileID: 8553614219225560548, guid: 9bebb742ecc76c74baf43f5ee0e4aafa, type: 3}
   firePoint: {fileID: 3492210951384844644}
   currentState: 0
+  fightCount: 0
 --- !u!1 &3492210951384844647
 GameObject:
   m_ObjectHideFlags: 0

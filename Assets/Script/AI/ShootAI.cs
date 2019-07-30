@@ -11,6 +11,7 @@ public class ShootAI : AI
     [SerializeField]GameObject bullet;
     [SerializeField]Transform firePoint;
     public AIState currentState;
+    public int fightCount;
 
     public enum AIState
     {
@@ -38,17 +39,19 @@ public class ShootAI : AI
 
         else if(currentState == AIState.fight)
         {
+
             rigidbody.velocity = GameManager.scrollAmount * Vector2.up * ctrlValue * Mathf.Sin((GameManager.scrollValue + shiftValue) * zigzagRate) * zigzagRange;
             if(GameManager.scrollValue > nextFireInterval)
             {
                 fireCount++;
-                nextFireInterval = GameManager.scrollValue + 1/nextFireFrequency;
+                nextFireInterval = GameManager.scrollValue + nextFireFrequency;
                 Instantiate(bullet,firePoint.position, Quaternion.identity);
             }
             if(fireCount > maxFire)
             {
                 currentState = AIState.leave;
             }
+            
         }
 
         else if(currentState == AIState.leave)
