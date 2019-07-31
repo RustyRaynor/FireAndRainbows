@@ -4,8 +4,15 @@ using UnityEngine;
 
 public abstract class Stage : MonoBehaviour
 {
-    public int troubleChance;
-    public GameObject movingTankEnemy, shooterEnemy;
+    [System.Serializable]
+    public struct EnemyUnit
+    {
+        public GameObject unit;
+        public Vector2 preferedPoint;
+        public float waitTime;
+    }
+
+    public EnemyUnit[] enemyUnitSet;
     public float spawnX;
     
     public abstract float SpawnEnemies();

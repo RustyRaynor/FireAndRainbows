@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     float spawnX;
     int currentStage;
 
+    [Header("Spwan Control")]
+    [SerializeField]bool canSpawn;
     [SerializeField]float nextEnemySpawnPoint;
     [SerializeField]Transform movablesParent;
     
@@ -30,7 +32,7 @@ public class GameManager : MonoBehaviour
         scrollAmount = Time.deltaTime * scrollSpeed;
         scrollValue += scrollAmount;
 
-            if(scrollValue > nextEnemySpawnPoint)SpawnEnemy();
+        if(canSpawn && scrollValue > nextEnemySpawnPoint)SpawnEnemy();
     }
 
     void SpawnPlayer()
