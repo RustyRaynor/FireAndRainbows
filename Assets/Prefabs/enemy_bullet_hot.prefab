@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 8553614219225560569}
   - component: {fileID: 2894873998870765102}
   - component: {fileID: 525846897781481507}
+  - component: {fileID: -1748690148030228403}
   m_Layer: 0
   m_Name: enemy_bullet_hot
   m_TagString: Untagged
@@ -146,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdce770f871958b4daddf3126672f57d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnemy: 0
   speed: 200
-  destroyOffset: 1
 --- !u!61 &525846897781481507
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -174,3 +175,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.26315442, y: 0.038752433}
   m_EdgeRadius: 0
+--- !u!114 &-1748690148030228403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8553614219225560548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dda60b350c6f4b43b6d308e12a73282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnemy: 0
+  destroyOffset: 1

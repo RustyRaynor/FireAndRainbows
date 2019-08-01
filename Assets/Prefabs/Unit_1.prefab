@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 2670405251865423990}
   - component: {fileID: 2670405251865423988}
   - component: {fileID: 2670405251865423989}
+  - component: {fileID: 3022270619713175768}
   m_Layer: 0
   m_Name: Unit_1
   m_TagString: Untagged
@@ -287,8 +288,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdce770f871958b4daddf3126672f57d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnemy: 1
   speed: 50
-  destroyOffset: 2
 --- !u!50 &2670405251865423989
 Rigidbody2D:
   serializedVersion: 4
@@ -310,6 +311,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3022270619713175768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2670405251865423993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dda60b350c6f4b43b6d308e12a73282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnemy: 1
+  destroyOffset: 2
 --- !u!1 &2670405252215784014
 GameObject:
   m_ObjectHideFlags: 0

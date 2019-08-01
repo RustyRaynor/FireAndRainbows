@@ -1258,7 +1258,7 @@ MonoBehaviour:
   scrollSpeed: 5
   stageList:
   - {fileID: 1142249276}
-  canSpawn: 1
+  canSpawn: 0
   nextEnemySpawnPoint: 30
   movablesParent: {fileID: 1490596980}
 --- !u!4 &1142249275
@@ -1290,13 +1290,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyUnitSet:
   - unit: {fileID: 2670405251865423993, guid: d05f8e44f32914345bdbef3d46966569, type: 3}
-    preferedPoint: {x: 1, y: 0.2}
+    preferedPoint: {x: 120, y: 80}
     waitTime: 20
   - unit: {fileID: 2115549175750778071, guid: 3b6c750d8ea1d0a4ba4bff814898412a, type: 3}
-    preferedPoint: {x: 1, y: 0}
+    preferedPoint: {x: 150, y: 50}
     waitTime: 20
   - unit: {fileID: 3081922984709271329, guid: 362eeaea178f2404897712a9969859b2, type: 3}
-    preferedPoint: {x: 1, y: 0}
+    preferedPoint: {x: 120, y: 50}
+    waitTime: 20
+  - unit: {fileID: 6344448102084412676, guid: 26c43eccacae23944af1cca848a2c55f, type: 3}
+    preferedPoint: {x: 150, y: 50}
     waitTime: 20
   spawnX: 10
 --- !u!1 &1155472224

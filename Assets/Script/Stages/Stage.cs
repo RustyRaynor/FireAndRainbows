@@ -9,11 +9,10 @@ public abstract class Stage : MonoBehaviour
     {
         public GameObject unit;
         public Vector2 preferedPoint;
-        public float waitTime;
     }
 
     public EnemyUnit[] enemyUnitSet;
     public float spawnX;
     
-    public abstract float SpawnEnemies();
+    public abstract void SpawnEnemies();
 }
