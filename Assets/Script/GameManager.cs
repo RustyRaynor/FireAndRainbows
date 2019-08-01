@@ -14,11 +14,14 @@ public class GameManager : MonoBehaviour
     public Stage[] stageList;
     float spawnX;
     int currentStage;
-    [SerializeField]float nextSpawnPoint;
+
+    [Header("Spwan Control")]
+    public static bool canSpawn;
     [SerializeField]Transform movablesParent;
     
     void Start()
     {
+        canSpawn = true;
         spawnX = Screen.width/10 + Screen.width;
         SpawnPlayer();
     }
@@ -27,7 +30,8 @@ public class GameManager : MonoBehaviour
     {
         scrollAmount = Time.deltaTime * scrollSpeed;
         scrollValue += scrollAmount;
-        if(scrollValue > nextSpawnPoint)SpawnObstacles();
+
+        if(canSpawn)SpawnEnemy();
     }
 
     void SpawnPlayer()
@@ -36,16 +40,10 @@ public class GameManager : MonoBehaviour
         Instantiate(playerObj, pos, Quaternion.identity);
     }
 
-
-
-    void SpawnObstacles()
+    void SpawnEnemy()
     {
-        float yVal = Random.Range(3, 10) * Screen.height/10;
-        Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(spawnX, yVal, 1));
-        SpawnableStaticObjectData spawnableObj = stageList[currentStage].GetObject();
-        GameObject obj = Instantiate(spawnableObj.spawnableObject, pos, Quaternion.identity, movablesParent);
-
-        nextSpawnPoint = scrollValue + spawnableObj.intervel;
+        stageList[currentStage].SpawnEnemies();
+        canSpawn = false;
     }
 
 }

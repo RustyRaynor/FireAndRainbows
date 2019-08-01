@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-    public struct SpawnableStaticObjectData
-    {
-        public GameObject spawnableObject;
-        public float intervel;
-    }
-
 public abstract class Stage : MonoBehaviour
 {
-    public int troubleChance;
-    public SpawnableStaticObjectData[] troubleItems;
-    public SpawnableStaticObjectData[] goodItems;
+    [System.Serializable]
+    public struct EnemyUnit
+    {
+        public GameObject unit;
+        public Vector2 preferedPoint;
+    }
+
+    public EnemyUnit[] enemyUnitSet;
+    public float spawnX;
     
-    public abstract SpawnableStaticObjectData GetObject(); 
+    public abstract void SpawnEnemies();
 }
