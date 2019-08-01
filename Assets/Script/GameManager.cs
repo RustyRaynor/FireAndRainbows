@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     void SpawnPlayer()
     {
-        Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3( Screen.width/4, Screen.height/2, 1));
+        Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3( Screen.width/6, Screen.height/2, 1));
         Instantiate(playerObj, pos, Quaternion.identity);
     }
 

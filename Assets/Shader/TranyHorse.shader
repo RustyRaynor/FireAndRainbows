@@ -1,139 +1,65 @@
-﻿// Unity built-in shader source. Copyright (c) 2016 Unity Technologies. MIT license (see license.txt)
+﻿
+Shader "Custom/TranyHorse" {
+    
+Properties {
+    _NTex ("Normal", 2D) = "white" {}
+    _ATex ("Angry", 2D) = "white" {}
+    _FTex ("Furious", 2D) = "white" {}
+    _Shift ("Shift", Range(0,2)) = 0
+    _ClipVal ("Clip", Range(0,1)) = 0
+        }
 
-Shader "Custom/TranyHorse"
-{
-    Properties
+SubShader {
+
+    Tags { "RenderType" = "Opaque" }
+    LOD 150
+
+    pass
     {
-        [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
-        _ShiftATex ("Shift A Texture", 2D) = "white" {}
-        _ShiftBTex ("Shift B Texture", 2D) = "white" {}
-        _ShiftCTex ("Shift C Texture", 2D) = "white" {}
-        _Color ("Tint", Color) = (1,1,1,1)
+    CGPROGRAM
+    #pragma vertex vert
+    #pragma fragment frag
+    #pragma target 2.0
+    #include "UnityCG.cginc"
 
-        _StencilComp ("Stencil Comparison", Float) = 8
-        _Stencil ("Stencil ID", Float) = 0
-        _StencilOp ("Stencil Operation", Float) = 0
-        _StencilWriteMask ("Stencil Write Mask", Float) = 255
-        _StencilReadMask ("Stencil Read Mask", Float) = 255
+    sampler2D _NTex;
+    sampler2D _ATex;
+    sampler2D _FTex;
+    fixed _Shift;
+    fixed _ClipVal;
+    
+    struct v2f
+    {
+        half4 pos : SV_POSITION;
+        half2 uv : TEXCOORD;
+    };
 
-        _ColorMask ("Color Mask", Float) = 15
-        _ShiftRange ("Shift Range", Range(0, 2)) = 0.5
+    v2f vert(appdata_base v)
+    {
+        v2f o;
+        o.pos = UnityObjectToClipPos(v.vertex);
+        o.uv = v.texcoord;
 
-        [Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip ("Use Alpha Clip", Float) = 0
+        return o;
     }
 
-    SubShader
+    half4 frag(v2f IN) : COLOR
     {
-        Tags
+        fixed4 col = 0;
+        if(_Shift < 1)
         {
-            "Queue"="Transparent"
-            "IgnoreProjector"="True"
-            "RenderType"="Transparent"
-            "PreviewType"="Plane"
-            "CanUseSpriteAtlas"="True"
-        }
-
-        Stencil
+            col = lerp(tex2D(_NTex, IN.uv), tex2D(_ATex, IN.uv), _Shift);
+        }else
         {
-            Ref [_Stencil]
-            Comp [_StencilComp]
-            Pass [_StencilOp]
-            ReadMask [_StencilReadMask]
-            WriteMask [_StencilWriteMask]
+            col = lerp(tex2D(_ATex, IN.uv), tex2D(_FTex, IN.uv), _Shift - 1);
         }
+        clip(col.a - _ClipVal);
+        return col;
+    }
 
-        Cull Off
-        Lighting Off
-        ZWrite Off
-        ZTest [unity_GUIZTestMode]
-        Blend SrcAlpha OneMinusSrcAlpha
-        ColorMask [_ColorMask]
-
-        Pass
-        {
-            Name "Default"
-        CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-            #pragma target 2.0
-
-            #include "UnityCG.cginc"
-            #include "UnityUI.cginc"
-
-            #pragma multi_compile __ UNITY_UI_CLIP_RECT
-            #pragma multi_compile __ UNITY_UI_ALPHACLIP
-
-            struct appdata_t
-            {
-                float4 vertex   : POSITION;
-                float4 color    : COLOR;
-                float2 texcoord : TEXCOORD0;
-                UNITY_VERTEX_INPUT_INSTANCE_ID
-            };
-
-            struct v2f
-            {
-                float4 vertex   : SV_POSITION;
-                fixed4 color    : COLOR;
-                float2 texcoord  : TEXCOORD0;
-                float4 worldPosition : TEXCOORD1;
-                UNITY_VERTEX_OUTPUT_STEREO
-            };
-
-            sampler2D _MainTex;
-            sampler2D _ShiftATex;
-            sampler2D _ShiftBTex;
-            sampler2D _ShiftCTex;
-            half _ShiftRange;
-            fixed4 _Color;
-            fixed4 _TextureSampleAdd;
-            float4 _ClipRect;
-            float4 _MainTex_ST;
-
-            v2f vert(appdata_t v)
-            {
-                v2f OUT;
-                UNITY_SETUP_INSTANCE_ID(v);
-                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(OUT);
-                OUT.worldPosition = v.vertex;
-                OUT.vertex = UnityObjectToClipPos(OUT.worldPosition);
-
-                OUT.texcoord = TRANSFORM_TEX(v.texcoord, _MainTex);
-
-                OUT.color = v.color * _Color;
-                return OUT;
-            }
-
-            fixed4 frag(v2f IN) : SV_Target
-            {
-                
-                half4 tex1 = tex2D(_ShiftATex, IN.texcoord);
-                half4 tex2 = tex2D(_ShiftBTex, IN.texcoord);
-                half4 tex3 = tex2D(_ShiftCTex, IN.texcoord);
-
-                half4 color = 0;
-
-                if(_ShiftRange < 1)
-                {
-                    color = lerp(tex1, tex2, _ShiftRange);
-                } else
-                {
-                    color = lerp(tex2, tex3, _ShiftRange - 1);
-                }
-
-                color += _TextureSampleAdd * IN.color;
-                
-                #ifdef UNITY_UI_CLIP_RECT
-                color.a *= UnityGet2DClipping(IN.worldPosition.xy, _ClipRect);
-                #endif
-
-                #ifdef UNITY_UI_ALPHACLIP
-                clip (color.a - 0.001);
-                #endif
-
-                return color;
-            }
-        ENDCG
-        }
+    ENDCG
     }
 }
+Fallback "Mobile/VertexLit"
+}
+
