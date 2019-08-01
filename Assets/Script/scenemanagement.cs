@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class scenemanagement : MonoBehaviour
 {
+    public Canvas menu;
+    public Canvas Op;
     void Start()
     {
         
@@ -14,12 +16,18 @@ public class scenemanagement : MonoBehaviour
     {
         SceneManager.LoadScene("Test");
     }
-    public void Settings()
+    public void Options()
     {
-        SceneManager.LoadScene("Settings");
+        menu.gameObject.SetActive(false);
+        Op.gameObject.SetActive(true);
     }
-    public void HowtoPlay()
+    public void Quit()
     {
-        SceneManager.LoadScene("HowtoPlay");
+        Application.Quit();
+    }
+    public void ReturntoMainMenu()
+    {
+        menu.gameObject.SetActive(true);
+        Op.gameObject.SetActive(false);
     }
 }
