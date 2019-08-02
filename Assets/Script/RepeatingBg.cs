@@ -23,7 +23,7 @@ public class RepeatingBg : MonoBehaviour
 
     void Reposition()
     {
-        Vector2 offset = new Vector2(horizontalLength * 2f, 0);
-        transform.position = (Vector2)transform.position + offset;
+        Vector3 offset = new Vector3(horizontalLength * 2f, 0, 0);
+        transform.position = transform.position + offset;
     }
 }
