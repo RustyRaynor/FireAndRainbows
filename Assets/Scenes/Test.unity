@@ -1526,11 +1526,8 @@ MonoBehaviour:
     preferedPoint: {x: 120, y: 50}
   - unit: {fileID: 6344448102084412676, guid: 26c43eccacae23944af1cca848a2c55f, type: 3}
     preferedPoint: {x: 150, y: 50}
-<<<<<<< HEAD
   - unit: {fileID: 4270921067851102821, guid: 8b208d507dc66714fa2bfa919feb0eb1, type: 3}
     preferedPoint: {x: 110, y: 50}
-=======
->>>>>>> ff13c0dfecd1d4da2a7fb72077e525c6252b040e
   spawnX: 10
 --- !u!1 &1155472224
 GameObject:
