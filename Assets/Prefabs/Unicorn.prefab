@@ -78,6 +78,13 @@ LineRenderer:
   - {x: -11.853313, y: -3.7784462, z: -2.5999756}
   - {x: -12.850817, y: -3.707825, z: -2.5999756}
   - {x: -13.844346, y: -3.5942516, z: -2.5999756}
+  - {x: -13.844346, y: -3.5942516, z: -2.5999756}
+  - {x: -13.844346, y: -3.5942516, z: -2.5999756}
+  - {x: -13.844346, y: -3.5942516, z: -2.5999756}
+  - {x: -13.844346, y: -3.5942516, z: -2.5999756}
+  - {x: -13.844346, y: -3.5942516, z: -2.5999756}
+  - {x: -13.844346, y: -3.5942516, z: -2.5999756}
+  - {x: -13.844346, y: -3.5942516, z: -2.5999756}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 2
@@ -155,10 +162,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line: {fileID: 1976480082}
-  spacing: 1
+  spacing: 0.5
   wind: 0.2
-  windNoise: 0.16
+  windNoise: -2
   noiseStrength: 0.05
+  noiseSpeed: 2
 --- !u!1 &922234182371550654
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +183,7 @@ GameObject:
   - component: {fileID: 3678839887696870429}
   m_Layer: 0
   m_Name: Unicorn
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

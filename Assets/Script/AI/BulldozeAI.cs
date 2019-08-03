@@ -16,7 +16,7 @@ public class BulldozeAI : AI
     }
 
     public override void SubStart(){
-        targetX = Camera.main.ScreenToWorldPoint(new Vector2(8 * Screen.width/9 , 0)).x;
+       targetX = Camera.main.ScreenToWorldPoint(new Vector2(8 * Screen.width/9 , 0)).x;
     }
 
     public override void Action(){
