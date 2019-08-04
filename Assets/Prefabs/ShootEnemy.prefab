@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 3081922984709271342}
   - component: {fileID: 3081922984709271340}
   - component: {fileID: 282164192504207149}
+  - component: {fileID: 3187785044556195635}
   m_Layer: 0
   m_Name: ShootEnemy
   m_TagString: Enemy
@@ -184,13 +185,13 @@ MonoBehaviour:
   ctrlValue: 1
   shiftValue: 0
   maxFire: 20
-  zigzagRate: 1
-  zigzagRange: 80
+  zigzagRate: 4
+  zigzagRange: 50
   moveSpeed: 50
   exitSpeed: 200
   targetX: 5
-  fireRate: 50
-  nextFireFrequency: 1
+  fireRate: 100
+  nextFireFrequency: 0.3
   bullet: {fileID: 8553614219225560548, guid: 9bebb742ecc76c74baf43f5ee0e4aafa, type: 3}
   firePoint: {fileID: 3492210951384844644}
   currentState: 0
@@ -209,6 +210,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEnemy: 1
   destroyOffset: 2
+--- !u!114 &3187785044556195635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081922984709271329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3e8ed776df9404db97bdfa531aa215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3492210951384844647
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TrailControl : MonoBehaviour
 {
     [SerializeField] LineRenderer line;
-    [SerializeField] float spacing, wind, windNoise, noiseStrength; 
+    [SerializeField] float spacing, wind, windNoise, noiseStrength, noiseSpeed; 
   //  [SerializeField] TrailRenderer trailRenderer;
 
     void Start()
@@ -23,7 +23,7 @@ public class TrailControl : MonoBehaviour
         for (int i = 1; i < line.positionCount; i++)
         {
           Vector3 lastPos = line.GetPosition( i - 1);
-          Vector3 dir = ((line.GetPosition(i) - lastPos) - Vector3.right * wind +  Vector3.up * Mathf.Sin(GameManager.scrollValue + (i * windNoise)) * noiseStrength).normalized;
+          Vector3 dir = ((line.GetPosition(i) - lastPos) - Vector3.right * wind +  Vector3.up * Mathf.Sin(GameManager.scrollValue * noiseSpeed + (i * windNoise)) * noiseStrength).normalized;
           line.SetPosition(i, lastPos + dir * spacing);
         }
     }
