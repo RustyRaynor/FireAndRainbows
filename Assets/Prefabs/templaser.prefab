@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1400952133190176966}
   - component: {fileID: 7653928589003017083}
   - component: {fileID: 2137466503029369228}
+  - component: {fileID: 773705476381185289}
   m_Layer: 0
   m_Name: templaser
   m_TagString: Untagged
@@ -92,4 +93,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e9227f83cd37d47951f412c93ff09c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
   speed: 2
+--- !u!61 &773705476381185289
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7776871110463607696}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.009137869, y: 0.020954609}
+  m_SpriteTilingProperty:
+    border: {x: 3.0866666, y: 3.4858334, z: 4.164167, w: 4.5025}
+    pivot: {x: 0.43412387, y: 0.4385156}
+    oldSize: {x: 8.2675, y: 8.2675}
+    newSize: {x: 9.9210005, y: 9.9210005}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9609685, y: 0.11301422}
+  m_EdgeRadius: 0

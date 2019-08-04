@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 282164192504207149}
   m_Layer: 0
   m_Name: ShootEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,8 +183,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ctrlValue: 1
   shiftValue: 0
-  limitWorldX: 1
-  destroyOffset: 1
   maxFire: 20
   zigzagRate: 1
   zigzagRange: 80
