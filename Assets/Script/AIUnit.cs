@@ -21,10 +21,11 @@ public class AIUnit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < segments.Length; i++)
-        {
-            Vector2 shift = GetSpot(i);
-            segments[i].position = new Vector3(transform.position.x + (spaceX * i) + shift.x , transform.position.y + (spaceY * i) + shift.y, segments[i].position.z);
+        for (int i = 0; i < segments.Length; i++){
+            if(segments[i]){
+                Vector2 shift = GetSpot(i);
+                segments[i].position = new Vector3(transform.position.x + (spaceX * i) + shift.x , transform.position.y + (spaceY * i) + shift.y, segments[i].position.z);
+            }
         }
     }
 

@@ -90,10 +90,10 @@ GameObject:
   - component: {fileID: 1124844511191713287}
   - component: {fileID: 8385545878329820557}
   - component: {fileID: 3081922984709271343}
-  - component: {fileID: 3081922984709271342}
   - component: {fileID: 3081922984709271340}
   - component: {fileID: 282164192504207149}
   - component: {fileID: 3187785044556195635}
+  - component: {fileID: 3014664644162933121}
   m_Layer: 0
   m_Name: ShootEnemy
   m_TagString: Enemy
@@ -151,25 +151,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.16744603, y: -0.05000002}
+  m_Offset: {x: 0.089803934, y: -0.050000012}
   serializedVersion: 2
-  m_Radius: 0.24299973
---- !u!58 &3081922984709271342
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3081922984709271329}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.13842452, y: -0.050000012}
-  serializedVersion: 2
-  m_Radius: 0.3107931
+  m_Radius: 0.6835182
 --- !u!114 &3081922984709271340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dda60b350c6f4b43b6d308e12a73282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnemy: 1
+  spawnOnDeath: 1
   destroyOffset: 2
 --- !u!114 &3187785044556195635
 MonoBehaviour:
@@ -222,6 +206,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3e8ed776df9404db97bdfa531aa215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3014664644162933121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081922984709271329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d630762a130e9ed4387b40585d5caae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 0
+  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+  instaSpawn: 1
 --- !u!1 &3492210951384844647
 GameObject:
   m_ObjectHideFlags: 0
