@@ -94,6 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+  scoreObject: {fileID: 3732038751117687879, guid: 33ad103db7c8b9c45a619c3eb88559d9,
+    type: 3}
   speed: 2
 --- !u!61 &773705476381185289
 BoxCollider2D:
