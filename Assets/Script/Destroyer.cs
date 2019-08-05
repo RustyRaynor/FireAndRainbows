@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Destroyer : MonoBehaviour
 {
-    [SerializeField] bool isEnemy;
+    [SerializeField] bool spawnOnDeath;
     [SerializeField] float destroyOffset;
+
     float limitWorldX;
 
     void Start()
@@ -19,7 +20,7 @@ public class Destroyer : MonoBehaviour
         if(transform.position.x + destroyOffset < -limitWorldX)
         {
             Destroy(gameObject);
-            if(isEnemy) GameManager.canSpawn = true;
+            if(spawnOnDeath) GameManager.canSpawn = true;
         }
     }
 }

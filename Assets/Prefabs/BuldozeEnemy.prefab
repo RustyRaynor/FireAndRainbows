@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8149746014092907717}
   - component: {fileID: 782086201281582927}
-  - component: {fileID: 6079444890525112651}
-  - component: {fileID: 9132429081900143801}
   - component: {fileID: 2882848933018359757}
   - component: {fileID: 2433934517552155709}
   - component: {fileID: -8127798532733457861}
+  - component: {fileID: 2270787756579135268}
+  - component: {fileID: 8484658698226085170}
   m_Layer: 0
   m_Name: BuldozeEnemy
   m_TagString: Enemy
@@ -58,58 +58,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6079444890525112651
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6071070471938227683}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.042153597}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.3309027}
-  m_EdgeRadius: 0
---- !u!61 &9132429081900143801
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6071070471938227683}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.30263507}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.36190754, y: 0.36076307}
-  m_EdgeRadius: 0
 --- !u!114 &2882848933018359757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dda60b350c6f4b43b6d308e12a73282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnemy: 0
+  spawnOnDeath: 1
   destroyOffset: 2
 --- !u!114 &-8127798532733457861
 MonoBehaviour:
@@ -157,6 +105,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3e8ed776df9404db97bdfa531aa215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &2270787756579135268
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6071070471938227683}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &8484658698226085170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6071070471938227683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d630762a130e9ed4387b40585d5caae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 0
+  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+  instaSpawn: 1
 --- !u!1 &8351153754951879122
 GameObject:
   m_ObjectHideFlags: 0

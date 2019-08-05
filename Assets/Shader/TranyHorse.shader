@@ -2,6 +2,7 @@
 Shader "Custom/TranyHorse" {
     
 Properties {
+    _MainTex ("Normal", 2D) = "white" {}
     _NTex ("Normal", 2D) = "white" {}
     _ATex ("Angry", 2D) = "white" {}
     _FTex ("Furious", 2D) = "white" {}

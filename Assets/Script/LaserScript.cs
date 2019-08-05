@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class LaserScript : MonoBehaviour
 {
-    public GameObject explosion;
-    
 
     Rigidbody2D rb2d;
     public float speed;
@@ -31,13 +29,6 @@ public class LaserScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
-        {
-            GameObject.Find("GameManager").GetComponent<ScoreCounter>().enemyScore += 50;
-            Vector3 position = collision.gameObject.transform.position;
-            Instantiate(explosion, position, collision.gameObject.transform.rotation);
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
-        }
+        Destroy(this.gameObject);
     }
 }

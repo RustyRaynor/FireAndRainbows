@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2670405251616317099}
   - component: {fileID: 2670405251616317098}
   - component: {fileID: 2670405251616317101}
+  - component: {fileID: 4519136096513703036}
+  - component: {fileID: 7379033872327295414}
   m_Layer: 0
   m_Name: MoveEnemy (2)
   m_TagString: Untagged
@@ -107,6 +109,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.36190754, y: 0.36076307}
   m_EdgeRadius: 0
+--- !u!114 &4519136096513703036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2670405251616317102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dda60b350c6f4b43b6d308e12a73282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnOnDeath: 0
+  destroyOffset: 0
+--- !u!114 &7379033872327295414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2670405251616317102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d630762a130e9ed4387b40585d5caae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 0
+  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+  instaSpawn: 0
 --- !u!1 &2670405251619943681
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,6 +150,8 @@ GameObject:
   - component: {fileID: 2670405251619943706}
   - component: {fileID: 2670405251619943709}
   - component: {fileID: 2670405251619943708}
+  - component: {fileID: 2330311460386769612}
+  - component: {fileID: 3877141908106338733}
   m_Layer: 0
   m_Name: MoveEnemy (3)
   m_TagString: Untagged
@@ -214,6 +247,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.36190754, y: 0.36076307}
   m_EdgeRadius: 0
+--- !u!114 &2330311460386769612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2670405251619943681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dda60b350c6f4b43b6d308e12a73282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnOnDeath: 0
+  destroyOffset: 0
+--- !u!114 &3877141908106338733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2670405251619943681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d630762a130e9ed4387b40585d5caae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 0
+  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+  instaSpawn: 0
 --- !u!1 &2670405251865423993
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dda60b350c6f4b43b6d308e12a73282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnemy: 1
+  spawnOnDeath: 1
   destroyOffset: 2
 --- !u!1 &2670405252215784014
 GameObject:
@@ -574,6 +636,8 @@ GameObject:
   - component: {fileID: 2670405253193933309}
   - component: {fileID: 2670405253193933308}
   - component: {fileID: 2670405253193933311}
+  - component: {fileID: 4306191748073577036}
+  - component: {fileID: 6524009132214664235}
   m_Layer: 0
   m_Name: MoveEnemy (4)
   m_TagString: Untagged
@@ -669,6 +733,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.36190754, y: 0.36076307}
   m_EdgeRadius: 0
+--- !u!114 &4306191748073577036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2670405253193933281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dda60b350c6f4b43b6d308e12a73282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnOnDeath: 0
+  destroyOffset: 0
+--- !u!114 &6524009132214664235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2670405253193933281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d630762a130e9ed4387b40585d5caae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 0
+  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+  instaSpawn: 0
 --- !u!1 &4919440251282014780
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +774,8 @@ GameObject:
   - component: {fileID: 1936299299043174544}
   - component: {fileID: 4925561813183096468}
   - component: {fileID: 7978546104692845414}
+  - component: {fileID: 3544808422214060402}
+  - component: {fileID: 1685866275986887067}
   m_Layer: 0
   m_Name: MoveEnemy (1)
   m_TagString: Untagged
@@ -776,6 +871,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.36190754, y: 0.36076307}
   m_EdgeRadius: 0
+--- !u!114 &3544808422214060402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919440251282014780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dda60b350c6f4b43b6d308e12a73282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnOnDeath: 0
+  destroyOffset: 0
+--- !u!114 &1685866275986887067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919440251282014780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d630762a130e9ed4387b40585d5caae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 0
+  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+  instaSpawn: 0
 --- !u!1 &7196990445262632461
 GameObject:
   m_ObjectHideFlags: 0
