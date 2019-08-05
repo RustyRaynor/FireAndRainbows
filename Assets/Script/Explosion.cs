@@ -13,6 +13,7 @@ public class Explosion : MonoBehaviour
         if (collision.transform.CompareTag("PlayerBullet"))
         {
             if(instaSpawn)GameManager.canSpawn = true;
+            GameObject.Find("GameManager").GetComponent<ScoreCounter>().enemyScore += 50;
             Vector3 position = collision.gameObject.transform.position;
             Destroy(Instantiate(explosion, position, collision.gameObject.transform.rotation), 3);
             Destroy(this.gameObject);
