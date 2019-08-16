@@ -30,4 +30,8 @@ public class scenemanagement : MonoBehaviour
         menu.gameObject.SetActive(true);
         Op.gameObject.SetActive(false);
     }
+    public void Credits()
+    {
+
+    }
 }
