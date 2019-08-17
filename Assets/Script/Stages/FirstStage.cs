@@ -7,20 +7,21 @@ public class FirstStage : Stage
     Vector3 birthPlace;
     public override void SpawnEnemies()
     {
-        EnemyUnit pickedEnemy = enemyUnitSet[Random.Range(0, enemyUnitSet.Length)];
-        if(currentThreat < maxThreat && pickedEnemy.tire2)
-        {   Debug.Log("Changed...");
-            bool changed = false;
+        EnemyUnit pickedEnemy;
 
-                while(!changed){
-                    pickedEnemy = enemyUnitSet[Random.Range(0, enemyUnitSet.Length)];
-                    if(!pickedEnemy.tire2)changed = true;
-                }
+        if(currentThreat < maxThreat)
+        {   
+            pickedEnemy = enemyUnitTire1[Random.Range(0, enemyUnitTire1.Length)];
         }
         else
         {
-            while(pickedEnemy.tire2){
-                pickedEnemy = enemyUnitSet[Random.Range(0, enemyUnitSet.Length)];
+            int type = Random.Range(0,10);
+            if(type < 5){
+                pickedEnemy = enemyUnitTire1[Random.Range(0, enemyUnitTire1.Length)];
+            }
+
+            else{
+                pickedEnemy = enemyUnitTire2[Random.Range(0, enemyUnitTire1.Length)];
             }
         }
 

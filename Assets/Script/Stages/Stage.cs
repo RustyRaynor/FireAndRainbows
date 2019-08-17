@@ -10,12 +10,12 @@ public abstract class Stage : MonoBehaviour
     [System.Serializable]
     public struct EnemyUnit
     {
-        public bool tire2;
         public GameObject unit;
         public Vector2 preferedPoint;
     }
 
-    public EnemyUnit[] enemyUnitSet;
+    public EnemyUnit[] enemyUnitTire1;
+    public EnemyUnit[] enemyUnitTire2;
     public EnemyUnit stageBoss;
     public int maxWaves = 20;
     public float spawnX;
