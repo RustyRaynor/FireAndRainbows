@@ -15,7 +15,6 @@ public class LaserScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log("Move");
         transform.position += Vector3.right * speed;
         BoundaryCheck();
     }

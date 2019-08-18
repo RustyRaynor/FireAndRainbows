@@ -13,14 +13,16 @@ public class GameManager : MonoBehaviour
     [Header("Stage Control")]
     public Stage[] stageList;
     float spawnX;
-    int currentStage;
+    [SerializeField] int currentStage, enemyWaves;
 
     [Header("Spwan Control")]
     public static bool canSpawn;
     [SerializeField]Transform movablesParent;
+    bool gameOnPlay;
     
     void Start()
     {
+        gameOnPlay = true;
         canSpawn = true;
         spawnX = Screen.width/10 + Screen.width;
         SpawnPlayer();
@@ -28,10 +30,20 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if(gameOnPlay && currentStage >= stageList.Length){
+            EndGame();
+            gameOnPlay = false;
+        }
+        
         scrollAmount = Time.deltaTime * scrollSpeed;
         scrollValue += scrollAmount;
-
-        if(canSpawn)SpawnEnemy();
+        if(gameOnPlay){
+            if(canSpawn){
+                if(enemyWaves < stageList[currentStage].maxWaves)SpawnEnemy();
+                else if(enemyWaves == stageList[currentStage].maxWaves)SpawnBoss();
+                else if(enemyWaves > stageList[currentStage].maxWaves)StartNewStage();
+            }
+        }
     }
 
     void SpawnPlayer()
@@ -43,7 +55,26 @@ public class GameManager : MonoBehaviour
     void SpawnEnemy()
     {
         stageList[currentStage].SpawnEnemies();
+        enemyWaves++;
         canSpawn = false;
+    }
+
+    void SpawnBoss()
+    {
+        stageList[currentStage].SpawnBoss();
+        enemyWaves++;
+        canSpawn = false;
+    }
+
+    void StartNewStage()
+    {
+        currentStage++;
+        enemyWaves = 0;
+    }
+
+    void EndGame()
+    {
+
     }
 
 }
