@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 2421101845123661536}
   - component: {fileID: 4540957675120795214}
   - component: {fileID: 3678839887696870429}
+  - component: {fileID: 5482749601197078890}
   m_Layer: 0
   m_Name: Unicorn
   m_TagString: Player
@@ -217,7 +218,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 1
 --- !u!114 &2421101845123661536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upMovement: 20
+  player: {fileID: 922234182371550654}
 --- !u!58 &4540957675120795214
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -244,9 +246,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.07154906, y: 0.03573537}
   serializedVersion: 2
-  m_Radius: 0.97446966
+  m_Radius: 0.7063767
 --- !u!114 &3678839887696870429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +263,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 7776871110463607696, guid: c90d4eb9e17de4849bc02b7ba1b6f3d9, type: 3}
   spawn: {fileID: 4503479617528260090}
+--- !u!114 &5482749601197078890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922234182371550654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36949e0cbbb9ff04b9f7dc34c1b7fefb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDead: 0
+  trail: {fileID: 1976480080}
 --- !u!1 &4503479617528260090
 GameObject:
   m_ObjectHideFlags: 0

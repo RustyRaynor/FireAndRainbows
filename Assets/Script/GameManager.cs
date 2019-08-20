@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    PlayerDeath deathScript;
+    public GameObject player;
+
+    public bool playerDead;
+
     [Header("Player Control")]
     public GameObject playerObj;
     public static float scrollAmount;
@@ -25,7 +30,9 @@ public class GameManager : MonoBehaviour
         gameOnPlay = true;
         canSpawn = true;
         spawnX = Screen.width/10 + Screen.width;
+        playerDead = false;
         SpawnPlayer();
+        deathScript = player.GetComponent<PlayerDeath>();
     }
 
     void Update()
@@ -37,12 +44,16 @@ public class GameManager : MonoBehaviour
         
         scrollAmount = Time.deltaTime * scrollSpeed;
         scrollValue += scrollAmount;
-        if(gameOnPlay){
+        if(playerDead == false){
             if(canSpawn){
                 if(enemyWaves < stageList[currentStage].maxWaves)SpawnEnemy();
                 else if(enemyWaves == stageList[currentStage].maxWaves)SpawnBoss();
                 else if(enemyWaves > stageList[currentStage].maxWaves)StartNewStage();
             }
+        }
+        else
+        {
+            scrollSpeed = 0;
         }
     }
 
