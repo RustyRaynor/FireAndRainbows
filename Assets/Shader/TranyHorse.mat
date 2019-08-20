@@ -93,7 +93,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _ClipVal: 0.173
+    - _ClipVal: 0.726
     - _ColorMask: 17.7
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -105,7 +105,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Shift: 2
+    - _Shift: 0
     - _ShiftRange: 0.59
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
