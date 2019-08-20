@@ -2186,7 +2186,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1142249275}
   - component: {fileID: 1142249274}
-  - component: {fileID: 1142249276}
   - component: {fileID: 1142249277}
   m_Layer: 0
   m_Name: GameManager
@@ -2211,7 +2210,9 @@ MonoBehaviour:
     type: 3}
   scrollSpeed: 5
   stageList:
-  - {fileID: 1142249276}
+  - {fileID: 1916336793}
+  - {fileID: 1806932979}
+  - {fileID: 1646662335}
   currentStage: 0
   enemyWaves: 0
   movablesParent: {fileID: 1490596980}
@@ -2227,35 +2228,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1490596980}
+  - {fileID: 1916336794}
+  - {fileID: 1806932978}
+  - {fileID: 1646662334}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1142249276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142249273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6332c96b06ff02b428777d72c5c564c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentThreat: 0
-  maxThreat: 10
-  incrementRate: 5
-  enemyUnitTire1:
-  - unit: {fileID: 2115549175750778071, guid: 3b6c750d8ea1d0a4ba4bff814898412a, type: 3}
-    preferedPoint: {x: 150, y: 50}
-  enemyUnitTire2:
-  - unit: {fileID: 3081922984709271329, guid: 362eeaea178f2404897712a9969859b2, type: 3}
-    preferedPoint: {x: 120, y: 50}
-  stageBoss:
-    unit: {fileID: 8230914209139393862, guid: 1b5686ac99471d74d8600d1d51c8403d, type: 3}
-    preferedPoint: {x: 150, y: 50}
-  maxWaves: 20
-  spawnX: 10
 --- !u!114 &1142249277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9243,6 +9221,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428cbdcf223b27d43a57471a01402304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1646662333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1646662334}
+  - component: {fileID: 1646662335}
+  m_Layer: 0
+  m_Name: GameStage3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1646662334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646662333}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1142249275}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1646662335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646662333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6332c96b06ff02b428777d72c5c564c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentThreat: 0
+  maxThreat: 10
+  incrementRate: 5
+  enemyUnitTire1:
+  - unit: {fileID: 2115549175750778071, guid: 3b6c750d8ea1d0a4ba4bff814898412a, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  enemyUnitTire2:
+  - unit: {fileID: 3081922984709271329, guid: 362eeaea178f2404897712a9969859b2, type: 3}
+    preferedPoint: {x: 120, y: 50}
+  stageBoss:
+    unit: {fileID: 8230914209139393862, guid: 1b5686ac99471d74d8600d1d51c8403d, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  maxWaves: 20
+  spawnX: 10
+  name: Stage3
 --- !u!1 &1693083126
 GameObject:
   m_ObjectHideFlags: 0
@@ -9724,6 +9760,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783280813}
   m_CullTransparentMesh: 0
+--- !u!1 &1806932977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1806932978}
+  - component: {fileID: 1806932979}
+  m_Layer: 0
+  m_Name: GameStage2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1806932978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806932977}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1142249275}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1806932979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806932977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6332c96b06ff02b428777d72c5c564c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentThreat: 0
+  maxThreat: 10
+  incrementRate: 5
+  enemyUnitTire1:
+  - unit: {fileID: 2115549175750778071, guid: 3b6c750d8ea1d0a4ba4bff814898412a, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  enemyUnitTire2:
+  - unit: {fileID: 3081922984709271329, guid: 362eeaea178f2404897712a9969859b2, type: 3}
+    preferedPoint: {x: 120, y: 50}
+  stageBoss:
+    unit: {fileID: 8230914209139393862, guid: 1b5686ac99471d74d8600d1d51c8403d, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  maxWaves: 20
+  spawnX: 10
+  name: Stage2
 --- !u!1 &1817631864
 GameObject:
   m_ObjectHideFlags: 0
@@ -10047,6 +10141,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1916336792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1916336794}
+  - component: {fileID: 1916336793}
+  m_Layer: 0
+  m_Name: GameStage1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1916336793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916336792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6332c96b06ff02b428777d72c5c564c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentThreat: 0
+  maxThreat: 10
+  incrementRate: 5
+  enemyUnitTire1:
+  - unit: {fileID: 2115549175750778071, guid: 3b6c750d8ea1d0a4ba4bff814898412a, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  enemyUnitTire2:
+  - unit: {fileID: 3081922984709271329, guid: 362eeaea178f2404897712a9969859b2, type: 3}
+    preferedPoint: {x: 120, y: 50}
+  stageBoss:
+    unit: {fileID: 8230914209139393862, guid: 1b5686ac99471d74d8600d1d51c8403d, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  maxWaves: 20
+  spawnX: 10
+  name: Stage1
+--- !u!4 &1916336794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916336792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1142249275}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1952325167
 GameObject:
   m_ObjectHideFlags: 0
