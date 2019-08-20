@@ -7,16 +7,12 @@ public class Scrolling : MonoBehaviour
     GameManager manager;
     public GameObject managerObject;
 
-    PlayerDeath deathScript;
-    public GameObject player;
-
     Rigidbody2D rb2d;
 
     public float speed;
     // Start is called before the first frame update
     void Start()
     {
-        deathScript = player.GetComponent<PlayerDeath>();
         manager = managerObject.GetComponent<GameManager>();
         rb2d = GetComponent<Rigidbody2D>();
     }
