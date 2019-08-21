@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirstStage : Stage
+public class GameStage : Stage
 {
+    [SerializeField]new string name;
     Vector3 birthPlace;
     public override void SpawnEnemies()
     {
