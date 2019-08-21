@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public bool playerDead;
 
+    public static bool canStop;
+
     [Header("Player Control")]
     public GameObject playerObj;
     public static float scrollAmount;
@@ -37,6 +39,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        canStop = playerDead;
+
         if(gameOnPlay && currentStage >= stageList.Length){
             EndGame();
             gameOnPlay = false;
