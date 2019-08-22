@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126693719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.77, y: -0.028, z: 0}
+  m_LocalPosition: {x: -0.327, y: -0.116, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5648612728228666286}
@@ -40,7 +40,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5648612728228666286}
   - component: {fileID: 9047823055467221137}
-  - component: {fileID: 1282110135}
+  - component: {fileID: 7819854614819857928}
+  - component: {fileID: 3678261763907188634}
+  - component: {fileID: 1812934871933627278}
+  - component: {fileID: 405063337138179000}
   m_Layer: 0
   m_Name: UFO
   m_TagString: Untagged
@@ -100,7 +103,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 5f63f4e160d24034aa3a0cb0ad69adf0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e0989b22ff2034468187d94b91bf444, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111,8 +114,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1282110135
-BoxCollider2D:
+--- !u!58 &7819854614819857928
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -121,22 +124,60 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.012842417}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
-    newSize: {x: 1.28, y: 1.28}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0.6134639, y: 0.7447051}
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 0.39326942}
-  m_EdgeRadius: 0
+  m_Radius: 0.14620821
+--- !u!58 &3678261763907188634
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6169809068146176375}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.8942614, y: -0.029999997}
+  serializedVersion: 2
+  m_Radius: 0.1682632
+--- !u!58 &1812934871933627278
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6169809068146176375}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.155896, y: -0.29376778}
+  serializedVersion: 2
+  m_Radius: 0.31284934
+--- !u!58 &405063337138179000
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6169809068146176375}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.41973838, y: 0.3254456}
+  serializedVersion: 2
+  m_Radius: 0.42979243
 --- !u!1 &8230914209139393862
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f26585975487bb47be29f112927c430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8553614219225560548, guid: 9bebb742ecc76c74baf43f5ee0e4aafa, type: 3}
+  bullet: {fileID: 8553614219225560548, guid: 5ce99dc6626633248b6b8053e28e4d52, type: 3}
   FirePoint: {fileID: 2126693719}
   explossionObject: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
   allAnimations:

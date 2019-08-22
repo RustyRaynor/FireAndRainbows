@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
             gameOnPlay = false;
         }
         
+        if(gameOnPlay){
         scrollAmount = Time.deltaTime * scrollSpeed;
         scrollValue += scrollAmount;
         if(playerDead == false){
@@ -59,6 +60,9 @@ public class GameManager : MonoBehaviour
         {
             scrollSpeed = 0;
         }
+        }
+
+
     }
 
     void SpawnPlayer()

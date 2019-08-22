@@ -22,7 +22,7 @@ public class GameStage : Stage
             }
 
             else{
-                pickedEnemy = enemyUnitTire2[Random.Range(0, enemyUnitTire1.Length)];
+                pickedEnemy = enemyUnitTire2[Random.Range(0, enemyUnitTire2.Length)];
             }
         }
 
