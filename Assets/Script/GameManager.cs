@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,12 +22,25 @@ public class GameManager : MonoBehaviour
     public Stage[] stageList;
     float spawnX;
     [SerializeField] int currentStage, enemyWaves;
+    
 
     [Header("Spwan Control")]
     public static bool canSpawn;
     [SerializeField]Transform movablesParent;
     bool gameOnPlay;
-    
+    public bool Run;
+    bool initialize = false;
+    private GameObject playerUni;
+
+    [Header("UI Pannel Controle")]
+    public GameObject mainMenu;
+    public GameObject gameMenu;
+    public GameObject endScreen;
+    public Text ResultText;
+
+    public PlayFabLeaderBoard playFabLeaderBoard;
+    public ScoreCounter scoreCounter;
+
     void Start()
     {
         gameOnPlay = true;
@@ -37,38 +51,56 @@ public class GameManager : MonoBehaviour
         deathScript = player.GetComponent<PlayerDeath>();
     }
 
+    public void StartGame()
+    {
+        Run = true;
+        playerUni.SetActive(true);
+        mainMenu.SetActive(false);
+        gameMenu.SetActive(true);
+        initialize = true;
+
+    }
+
     void Update()
     {
-        canStop = playerDead;
+        if(Run){
 
-        if(gameOnPlay && currentStage >= stageList.Length){
-            EndGame();
-            gameOnPlay = false;
-        }
-        
-        if(gameOnPlay){
-        scrollAmount = Time.deltaTime * scrollSpeed;
-        scrollValue += scrollAmount;
-        if(playerDead == false){
-            if(canSpawn){
-                if(enemyWaves < stageList[currentStage].maxWaves)SpawnEnemy();
-                else if(enemyWaves == stageList[currentStage].maxWaves)SpawnBoss();
-                else if(enemyWaves > stageList[currentStage].maxWaves)StartNewStage();
+         
+
+            canStop = playerDead;
+
+            if(gameOnPlay && currentStage >= stageList.Length)
+            {
+                EndGame();
+                gameOnPlay = false;
+            }
+            
+            if(gameOnPlay)
+            {
+                scrollAmount = Time.deltaTime * scrollSpeed;
+                scrollValue += scrollAmount;
+                if(playerDead == false)
+                {
+                    if(canSpawn)
+                    {
+                        if(enemyWaves < stageList[currentStage].maxWaves)SpawnEnemy();
+                        else if(enemyWaves == stageList[currentStage].maxWaves)SpawnBoss();
+                        else if(enemyWaves > stageList[currentStage].maxWaves)StartNewStage();
+                    }
+                }
+                else
+                {
+                    scrollSpeed = 0;
+                }
             }
         }
-        else
-        {
-            scrollSpeed = 0;
-        }
-        }
-
-
     }
 
     void SpawnPlayer()
     {
         Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3( Screen.width/6, Screen.height/2, 1));
-        Instantiate(playerObj, pos, Quaternion.identity);
+        playerUni = Instantiate(playerObj, pos, Quaternion.identity);
+        playerUni.SetActive(false);
     }
 
     void SpawnEnemy()
@@ -93,7 +125,22 @@ public class GameManager : MonoBehaviour
 
     void EndGame()
     {
+        Debug.Log("Game Ended..");
+    }
 
+    public void PlayerDead()
+    {
+        playerDead = true;
+        StartCoroutine("EndScreen");
+        ResultText.text = "Score : " + scoreCounter.enemyScore.ToString();
+        playFabLeaderBoard.StartCloudUpdatePlayerStats(scoreCounter.enemyScore);
+    }
+
+    IEnumerator EndScreen()
+    {
+        yield return new WaitForSeconds(3);
+        gameMenu.SetActive(false);
+        endScreen.SetActive(true);
     }
 
 }

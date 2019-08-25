@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d0199c11aa6f514784c5c69cd8378d8, type: 3}
+  m_Name: PlayFabEditorPrefsSO
+  m_EditorClassIdentifier: 
+  DevAccountEmail: flamencoresonance@gmail.com
+  DevAccountToken: p59n6etp7ajymg5giizr8hmj56in81qiopoyref4ty5eyjgxrpj1yn44ibhyoi7ft9np7pg4ggmzmwquw9aahyxrb4hocktgwq8s3qek4qq39grnrib9dwup6mqm97gkwybwpdkyz3k9s16u4x6odgswb17cw91hgbm4qutbngr43zhxj9cgkotasa9zf5zfeeqf9cf9
+  SelectedStudio: Knotgames
+  SdkPath: Assets/PlayFabSdk
+  EdExPath: 
+  LocalCloudScriptPath: 
+  PanelIsShown: 0
+  curMainMenuIdx: 1
+  curSubMenuIdx: 0

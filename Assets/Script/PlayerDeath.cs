@@ -18,6 +18,6 @@ public class PlayerDeath : MonoBehaviour
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
         trail.active = false;
         playerDead = true;
-        GameObject.Find("GameManager").GetComponent<GameManager>().playerDead = true;
+        GameObject.Find("GameManager").GetComponent<GameManager>().PlayerDead();
     }
 }
