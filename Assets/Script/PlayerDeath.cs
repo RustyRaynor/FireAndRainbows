@@ -19,5 +19,6 @@ public class PlayerDeath : MonoBehaviour
         trail.active = false;
         playerDead = true;
         GameObject.Find("GameManager").GetComponent<GameManager>().playerDead = true;
+        Debug.Log("Death");
     }
 }
