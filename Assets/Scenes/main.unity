@@ -2217,6 +2217,13 @@ MonoBehaviour:
   currentStage: 0
   enemyWaves: 0
   movablesParent: {fileID: 1490596980}
+  Run: 1
+  mainMenu: {fileID: 0}
+  gameMenu: {fileID: 0}
+  endScreen: {fileID: 0}
+  ResultText: {fileID: 0}
+  playFabLeaderBoard: {fileID: 0}
+  scoreCounter: {fileID: 0}
 --- !u!4 &1142249275
 Transform:
   m_ObjectHideFlags: 0
