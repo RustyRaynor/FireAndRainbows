@@ -253,7 +253,7 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 75fb008db7484e34d91613b2ab438def, type: 2}
   speed: 100
   stopingPoint: 7
-  health: 50
+  health: 100
 --- !u!111 &8424682715569799010
 Animation:
   m_ObjectHideFlags: 0

@@ -22,24 +22,23 @@ public class GameManager : MonoBehaviour
     public Stage[] stageList;
     float spawnX;
     [SerializeField] int currentStage, enemyWaves;
-    
 
     [Header("Spwan Control")]
     public static bool canSpawn;
     [SerializeField]Transform movablesParent;
     bool gameOnPlay;
-    public bool Run;
-    bool initialize = false;
-    private GameObject playerUni;
-
-    [Header("UI Pannel Controle")]
+    
+    public GameObject playerUni;
     public GameObject mainMenu;
     public GameObject gameMenu;
-    public GameObject endScreen;
-    public Text ResultText;
+    public GameObject gameFinish;
+    bool Run;
+    bool initialize;
 
     public PlayFabLeaderBoard playFabLeaderBoard;
     public ScoreCounter scoreCounter;
+    public Text ScoreDisplay;
+
 
     void Start()
     {
@@ -125,22 +124,23 @@ public class GameManager : MonoBehaviour
 
     void EndGame()
     {
-        Debug.Log("Game Ended..");
+
     }
 
     public void PlayerDead()
     {
+        gameMenu.SetActive(false);
         playerDead = true;
-        StartCoroutine("EndScreen");
-        ResultText.text = "Score : " + scoreCounter.enemyScore.ToString();
+        Run = false;
+        ScoreDisplay.text = scoreCounter.enemyScore.ToString();
         playFabLeaderBoard.StartCloudUpdatePlayerStats(scoreCounter.enemyScore);
+        StartCoroutine("EndScreen");
     }
 
     IEnumerator EndScreen()
     {
         yield return new WaitForSeconds(3);
-        gameMenu.SetActive(false);
-        endScreen.SetActive(true);
+        gameFinish.SetActive(true);
     }
 
 }
