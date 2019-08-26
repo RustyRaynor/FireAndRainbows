@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
         canSpawn = true;
         spawnX = Screen.width/10 + Screen.width;
         playerDead = false;
+        Run = false;
         SpawnPlayer();
         deathScript = player.GetComponent<PlayerDeath>();
     }
