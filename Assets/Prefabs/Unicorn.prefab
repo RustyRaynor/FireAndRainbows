@@ -277,6 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerDead: 0
   trail: {fileID: 1976480080}
+  deathsound: {fileID: 0}
 --- !u!1 &4503479617528260090
 GameObject:
   m_ObjectHideFlags: 0

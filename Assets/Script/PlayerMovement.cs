@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     PlayerDeath deathScript;
     public GameObject player;
     bool deathMove;
+    //[SerializeField]
+    //GameObject music;
 
     enum State
     {
@@ -51,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb2d.velocity = Vector2.zero;
             rb2d.AddForce(transform.up * upMovement, ForceMode2D.Impulse);
+            //music.gameObject.SetActive(true);
         }
     }
     void DeadMovement()
@@ -62,6 +66,8 @@ public class PlayerMovement : MonoBehaviour
             rb2d.AddTorque(100000f);
             rb2d.gravityScale = 5;
             deathMove = true;
+            //music.gameObject.SetActive(false);
+            
         }
     }
 }
