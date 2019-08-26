@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0199c11aa6f514784c5c69cd8378d8, type: 3}
   m_Name: PlayFabEditorPrefsSO
   m_EditorClassIdentifier: 
-  DevAccountEmail: flamencoresonance@gmail.com
-  DevAccountToken: p59n6etp7ajymg5giizr8hmj56in81qiopoyref4ty5eyjgxrpj1yn44ibhyoi7ft9np7pg4ggmzmwquw9aahyxrb4hocktgwq8s3qek4qq39grnrib9dwup6mqm97gkwybwpdkyz3k9s16u4x6odgswb17cw91hgbm4qutbngr43zhxj9cgkotasa9zf5zfeeqf9cf9
-  SelectedStudio: Knotgames
-  SdkPath: Assets/PlayFabSdk
+  DevAccountEmail: 
+  DevAccountToken: 
+  SelectedStudio: 
+  SdkPath: 
   EdExPath: 
   LocalCloudScriptPath: 
   PanelIsShown: 0
-  curMainMenuIdx: 1
+  curMainMenuIdx: 0
   curSubMenuIdx: 0
