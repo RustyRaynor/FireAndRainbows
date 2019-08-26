@@ -17,8 +17,13 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            Vector2 spawnPosition = new Vector2(spawn.transform.position.x, spawn.transform.position.y);
-            Instantiate(laser, spawnPosition, spawn.transform.rotation);
+            Shoot();
         }
+    }
+
+    public void Shoot()
+    {
+        Vector2 spawnPosition = new Vector2(spawn.transform.position.x, spawn.transform.position.y);
+        Instantiate(laser, spawnPosition, spawn.transform.rotation);
     }
 }

@@ -6,9 +6,14 @@ public class Statemanager : MonoBehaviour
 {
     public GameObject lavaBg;
     public GameObject goodBg;
-    // Start is called before the first frame update
-    enum State { good, lava};
-    State state;
+
+    public ScriptableObjects scObj;
+
+    public enum State { good, lava};
+    public State state;
+
+    public bool bossDefeated = false;
+
     void Start()
     {
         state = State.good;
@@ -17,6 +22,11 @@ public class Statemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(bossDefeated == true)
+        {
+            state = State.lava;
+        }
+
         switch (state)
         {
             case State.good:

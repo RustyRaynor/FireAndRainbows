@@ -7,8 +7,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public float upMovement; // 6 is best 
     Rigidbody2D rb2d;
+
     PlayerDeath deathScript;
     public GameObject player;
+
+    Renderer rend;
+
     bool deathMove;
     //[SerializeField]
     //GameObject music;
@@ -24,8 +28,10 @@ public class PlayerMovement : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         deathScript = player.GetComponent<PlayerDeath>();
+        rend = GetComponent<Renderer>();
         state = State.alive;
         deathMove = false;
+        rend.material.shader = Shader.Find("TranyHorse");
     }
 
     void Update()
@@ -41,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         switch (state)
         {
             case State.alive:
+                //rend.material.SetFloat("_Shift", 2);
                 AliveMovement();
                 break;
             case State.dead:
@@ -48,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
                 break;
         }
     }
-    void AliveMovement()
+    public void AliveMovement()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
