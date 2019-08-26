@@ -6,6 +6,7 @@ public class PlayerShoot : MonoBehaviour
 {
     public GameObject laser;
     public GameObject spawn;
+    public GameObject sound;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,5 +26,6 @@ public class PlayerShoot : MonoBehaviour
     {
         Vector2 spawnPosition = new Vector2(spawn.transform.position.x, spawn.transform.position.y);
         Instantiate(laser, spawnPosition, spawn.transform.rotation);
+        sound.SetActive(true);
     }
 }
