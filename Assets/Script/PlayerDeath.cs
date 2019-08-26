@@ -17,10 +17,13 @@ public class PlayerDeath : MonoBehaviour
     // Update is called once per frame
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        gameObject.GetComponent<CircleCollider2D>().enabled = false;
-        trail.active = false;
-        playerDead = true;
-        GameObject.Find("GameManager").GetComponent<GameManager>().PlayerDead();
-        deathsound.SetActive(true);
+        if (collision.collider.tag != "TopBound")
+        {
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            trail.active = false;
+            playerDead = true;
+            GameObject.Find("GameManager").GetComponent<GameManager>().PlayerDead();
+            //deathsound.SetActive(true);
+        }
     }
 }

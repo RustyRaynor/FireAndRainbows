@@ -318,7 +318,7 @@ Transform:
   m_GameObject: {fileID: 922234182371550654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 4851015891878479031}
   - {fileID: 3319590832377376225}
@@ -396,6 +396,7 @@ MonoBehaviour:
   laser: {fileID: 7776871110463607696, guid: c90d4eb9e17de4849bc02b7ba1b6f3d9, type: 3}
   spawn: {fileID: 4503479617528260090}
   sound: {fileID: 639123936494964851}
+  fireRate: 0.5
 --- !u!114 &5482749601197078890
 MonoBehaviour:
   m_ObjectHideFlags: 0
