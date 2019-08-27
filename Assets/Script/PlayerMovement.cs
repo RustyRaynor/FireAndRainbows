@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public float upMovement; // 6 is best 
     Rigidbody2D rb2d;
 
+    AudioSource sound;
+
     PlayerDeath deathScript;
     public GameObject player;
 
@@ -24,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         deathScript = player.GetComponent<PlayerDeath>();
+        sound = GetComponent<AudioSource>();
         state = State.alive;
         deathMove = false;
     }
@@ -52,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb2d.velocity = Vector2.zero;
         rb2d.AddForce(transform.up * upMovement, ForceMode2D.Impulse);
+        sound.Play();
     }
     
     void DeadMovement()

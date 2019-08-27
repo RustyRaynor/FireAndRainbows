@@ -53,7 +53,7 @@ public class BossAI : MonoBehaviour
             Destroy(Instantiate(bullet, FirePoint.transform.position, Quaternion.identity), 10);
             GameManager.canSpawn = true;
 
-            GameObject.Find("GameManager").GetComponent<Statemanager>().bossDefeated = true ;
+            GameObject.Find("GameManager").GetComponent<Statemanager>().bossDefeated++;
 
             Destroy(this.gameObject);
         }

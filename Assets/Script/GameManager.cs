@@ -182,7 +182,7 @@ public class GameManager : MonoBehaviour
         playerDead = false;
         Run = true;
         gameFinish.SetActive(false);
-        stage.bossDefeated = false;
+        stage.bossDefeated = 0;
     } 
 
 }

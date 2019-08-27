@@ -9,11 +9,15 @@ public class ShaderChange : MonoBehaviour
     void Start()
     {
         rend = GetComponent<Renderer>();
+        rend.material.SetFloat("_Shift", 0);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Lava()
     {
         rend.material.SetFloat("_Shift", 2);
+    }
+    public void Mid()
+    {
+        rend.material.SetFloat("_Shift", 1);
     }
 }
