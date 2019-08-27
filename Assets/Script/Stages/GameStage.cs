@@ -32,7 +32,7 @@ public class GameStage : Stage
         birthPlace.z = 1;
         birthPlace.x = segX * pickedEnemy.preferedPoint.x;
         birthPlace.y = segY * pickedEnemy.preferedPoint.y;
-        Instantiate(pickedEnemy.unit, Camera.main.ScreenToWorldPoint(birthPlace), Quaternion.identity);
+        Instantiate(pickedEnemy.unit, Camera.main.ScreenToWorldPoint(birthPlace), Quaternion.identity, GameManager.enemyHolder);
 
         currentThreat += incrementRate;
         if(currentThreat >= maxThreat) currentThreat = maxThreat;
@@ -47,7 +47,7 @@ public class GameStage : Stage
         birthPlace.z = 1;
         birthPlace.x = segX * stageBoss.preferedPoint.x;
         birthPlace.y = segY * stageBoss.preferedPoint.y;
-        Instantiate(stageBoss.unit, Camera.main.ScreenToWorldPoint(birthPlace), Quaternion.identity);
+        Instantiate(stageBoss.unit, Camera.main.ScreenToWorldPoint(birthPlace), Quaternion.identity, GameManager.enemyHolder);
 
     }
 

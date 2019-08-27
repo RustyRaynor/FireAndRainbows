@@ -845,6 +845,7 @@ GameObject:
   - component: {fileID: 157722442}
   - component: {fileID: 157722444}
   - component: {fileID: 157722443}
+  - component: {fileID: 157722445}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -913,6 +914,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157722441}
   m_CullTransparentMesh: 0
+--- !u!114 &157722445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157722441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &305310614
 GameObject:
   m_ObjectHideFlags: 0
@@ -3894,10 +3910,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1142249275}
   - component: {fileID: 1142249274}
-  - component: {fileID: 1142249276}
   - component: {fileID: 1142249277}
-  - component: {fileID: 1142249279}
   - component: {fileID: 1142249278}
+  - component: {fileID: 1142249276}
+  - component: {fileID: 1142249279}
+  - component: {fileID: 1142249280}
+  - component: {fileID: 1142249281}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3925,8 +3943,11 @@ MonoBehaviour:
   stageList:
   - {fileID: 1142249276}
   - {fileID: 1142249279}
+  - {fileID: 1142249280}
+  - {fileID: 1142249281}
   currentStage: 0
   enemyWaves: 0
+  allEnemyHolder: {fileID: 1765611324}
   movablesParent: {fileID: 1490596980}
   playerUni: {fileID: 0}
   mainMenu: {fileID: 779707072}
@@ -4030,14 +4051,96 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentThreat: 0
-  maxThreat: 10
+  maxThreat: 50
   incrementRate: 5
-  enemyUnitTire1: []
-  enemyUnitTire2: []
+  enemyUnitTire1:
+  - unit: {fileID: 2115549175750778071, guid: 3b6c750d8ea1d0a4ba4bff814898412a, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  - unit: {fileID: 8937206355491568410, guid: f57bb37d73c01d349bbeb5f343c668f2, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  - unit: {fileID: 8836038180662093606, guid: c647a2ba95944cf4581df0b1d8ff0363, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  - unit: {fileID: 6071070471938227683, guid: 8b208d507dc66714fa2bfa919feb0eb1, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  enemyUnitTire2:
+  - unit: {fileID: 3081922984709271329, guid: 362eeaea178f2404897712a9969859b2, type: 3}
+    preferedPoint: {x: 120, y: 50}
+  - unit: {fileID: 3081922984709271329, guid: 362eeaea178f2404897712a9969859b2, type: 3}
+    preferedPoint: {x: 120, y: 50}
   stageBoss:
-    unit: {fileID: 8230914209139393862, guid: 1b5686ac99471d74d8600d1d51c8403d, type: 3}
+    unit: {fileID: 8230914209139393862, guid: b24f5391737ee1344bd161cafbd05d83, type: 3}
     preferedPoint: {x: 150, y: 50}
   maxWaves: 5
+  spawnX: 10
+  name: 
+--- !u!114 &1142249280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142249273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6332c96b06ff02b428777d72c5c564c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentThreat: 0
+  maxThreat: 50
+  incrementRate: 5
+  enemyUnitTire1:
+  - unit: {fileID: 2115549175750778071, guid: 3b6c750d8ea1d0a4ba4bff814898412a, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  - unit: {fileID: 8937206355491568410, guid: f57bb37d73c01d349bbeb5f343c668f2, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  - unit: {fileID: 8836038180662093606, guid: c647a2ba95944cf4581df0b1d8ff0363, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  - unit: {fileID: 6071070471938227683, guid: 8b208d507dc66714fa2bfa919feb0eb1, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  enemyUnitTire2:
+  - unit: {fileID: 3081922984709271329, guid: 362eeaea178f2404897712a9969859b2, type: 3}
+    preferedPoint: {x: 120, y: 50}
+  - unit: {fileID: 3081922984709271329, guid: 362eeaea178f2404897712a9969859b2, type: 3}
+    preferedPoint: {x: 120, y: 50}
+  stageBoss:
+    unit: {fileID: 8230914209139393862, guid: 159ba16424f58484b8fca20e661a865a, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  maxWaves: 5
+  spawnX: 10
+  name: 
+--- !u!114 &1142249281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142249273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6332c96b06ff02b428777d72c5c564c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentThreat: 0
+  maxThreat: 50
+  incrementRate: 5
+  enemyUnitTire1:
+  - unit: {fileID: 2115549175750778071, guid: 3b6c750d8ea1d0a4ba4bff814898412a, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  - unit: {fileID: 8937206355491568410, guid: f57bb37d73c01d349bbeb5f343c668f2, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  - unit: {fileID: 8836038180662093606, guid: c647a2ba95944cf4581df0b1d8ff0363, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  - unit: {fileID: 6071070471938227683, guid: 8b208d507dc66714fa2bfa919feb0eb1, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  enemyUnitTire2:
+  - unit: {fileID: 3081922984709271329, guid: 362eeaea178f2404897712a9969859b2, type: 3}
+    preferedPoint: {x: 120, y: 50}
+  - unit: {fileID: 3081922984709271329, guid: 362eeaea178f2404897712a9969859b2, type: 3}
+    preferedPoint: {x: 120, y: 50}
+  stageBoss:
+    unit: {fileID: 8230914209139393862, guid: 159ba16424f58484b8fca20e661a865a, type: 3}
+    preferedPoint: {x: 150, y: 50}
+  maxWaves: 5000000
   spawnX: 10
   name: 
 --- !u!1 &1155097305
@@ -11161,6 +11264,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760822393}
   m_CullTransparentMesh: 0
+--- !u!1 &1765611323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1765611324}
+  m_Layer: 0
+  m_Name: EnemyHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1765611324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765611323}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.922652, y: -286.12598, z: -3.5999756}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1776178959
 GameObject:
   m_ObjectHideFlags: 0
