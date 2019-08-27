@@ -6,6 +6,8 @@ public class PlayerDeath : MonoBehaviour
 {
     public bool playerDead;
     public GameObject trail;
+
+    public AudioSource sound;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class PlayerDeath : MonoBehaviour
             trail.active = false;
             playerDead = true;
             GameObject.Find("GameManager").GetComponent<GameManager>().PlayerDead();
+            sound.Play();
         }
     }
 

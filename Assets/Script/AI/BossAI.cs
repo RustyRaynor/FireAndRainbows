@@ -17,6 +17,8 @@ public class BossAI : MonoBehaviour
     AIState currentState;
     Rigidbody2D rigidbody;
 
+    public AudioSource sound;
+
     void Start()
     {
             rigidbody = GetComponent<Rigidbody2D>();
@@ -32,6 +34,7 @@ public class BossAI : MonoBehaviour
             rigidbody.velocity = -Vector2.right * speed * GameManager.scrollAmount;
             if(transform.position.x < stopingPoint)
             {
+                sound.Play();
                 currentState = AIState.fight;
                 rigidbody.velocity *= 0;
             }
