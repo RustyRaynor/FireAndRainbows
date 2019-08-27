@@ -176,7 +176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &639123936494964849
 Transform:
   m_ObjectHideFlags: 0
@@ -395,8 +395,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 7776871110463607696, guid: c90d4eb9e17de4849bc02b7ba1b6f3d9, type: 3}
   spawn: {fileID: 4503479617528260090}
-  sound: {fileID: 639123936494964851}
-  fireRate: 0.5
+  sound: {fileID: 639123936494964848}
+  fireRate: 0.2
 --- !u!114 &5482749601197078890
 MonoBehaviour:
   m_ObjectHideFlags: 0

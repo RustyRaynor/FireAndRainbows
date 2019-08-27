@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         {
             case State.alive:
                 //rend.material.SetFloat("_Shift", 2);
-                AliveMovement();
+                if (Input.GetKeyDown(KeyCode.Space))AliveMovement();
                 break;
             case State.dead:
                 DeadMovement();
@@ -58,13 +58,11 @@ public class PlayerMovement : MonoBehaviour
     }
     public void AliveMovement()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb2d.velocity = Vector2.zero;
-            rb2d.AddForce(transform.up * upMovement, ForceMode2D.Impulse);
-            jumpSound.SetActive(true);
-        }
+        rb2d.velocity = Vector2.zero;
+        rb2d.AddForce(transform.up * upMovement, ForceMode2D.Impulse);
+        jumpSound.SetActive(true);
     }
+    
     void DeadMovement()
     {
        if (deathMove == false)
@@ -74,8 +72,11 @@ public class PlayerMovement : MonoBehaviour
             rb2d.AddTorque(100000f);
             rb2d.gravityScale = 5;
             deathMove = true;
-            
-            
         }
+    }
+
+    public void Reset()
+    {
+        Destroy(this.gameObject);
     }
 }

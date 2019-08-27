@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     PlayerDeath deathScript;
     public GameObject player;
 
+    ScoreCounter score;
+
     public bool playerDead;
 
     public static bool canStop;
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
     public GameObject mainMenu;
     public GameObject gameMenu;
     public GameObject gameFinish;
+
     bool Run;
     bool initialize;
 
@@ -49,6 +52,7 @@ public class GameManager : MonoBehaviour
         Run = false;
         SpawnPlayer();
         deathScript = player.GetComponent<PlayerDeath>();
+        score = GetComponent<ScoreCounter>();
     }
 
     public void StartGame()
@@ -143,5 +147,33 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         gameFinish.SetActive(true);
     }
+
+    public void UnicornJump()
+    {
+        playerUni.GetComponent<PlayerMovement>().AliveMovement();
+    }
+
+    public void UnicornShoot()
+    {
+        playerUni.GetComponent<PlayerShoot>().Shoot();
+    }
+
+    public void Reset()
+    {
+      Destroy(playerUni);
+        SpawnPlayer();
+       playerUni.SetActive(true);
+       score.timeScore = 0;
+       score.enemyScore = 0;
+       currentStage = 0;
+       enemyWaves = 0;
+
+        gameMenu.SetActive(true);
+
+        playerDead = false;
+        Run = false;
+        gameFinish.SetActive(false);
+
+    } 
 
 }

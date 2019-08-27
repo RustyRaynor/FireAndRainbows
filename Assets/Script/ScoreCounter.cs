@@ -7,7 +7,7 @@ public class ScoreCounter : MonoBehaviour
 {
     public Text scoreText;
     int score = 0;
-    int timeScore = 0;
+    public int timeScore = 0;
     public int enemyScore = 0;
 
     GameManager manager;

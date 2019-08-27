@@ -26,4 +26,11 @@ public class PlayerDeath : MonoBehaviour
             //deathsound.SetActive(true);
         }
     }
+
+    public void Reset()
+    {
+      playerDead = false;
+      trail.active = true;
+      gameObject.GetComponent<CircleCollider2D>().enabled = true;
+    }
 }

@@ -29,6 +29,11 @@ public class PlayFabLeaderBoard : MonoBehaviour {
 	private string password = "FARBgame";
 	public int lastScore;
 
+    void Start()
+    {
+        
+    }
+
     public void SubmitCredentials()
     {
         inputPannel.SetActive(false);
