@@ -3896,8 +3896,8 @@ GameObject:
   - component: {fileID: 1142249274}
   - component: {fileID: 1142249276}
   - component: {fileID: 1142249277}
-  - component: {fileID: 1142249278}
   - component: {fileID: 1142249279}
+  - component: {fileID: 1142249278}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4032,20 +4032,8 @@ MonoBehaviour:
   currentThreat: 0
   maxThreat: 10
   incrementRate: 5
-  enemyUnitTire1:
-  - unit: {fileID: 2115549175750778071, guid: 3b6c750d8ea1d0a4ba4bff814898412a, type: 3}
-    preferedPoint: {x: 150, y: 50}
-  - unit: {fileID: 8937206355491568410, guid: f57bb37d73c01d349bbeb5f343c668f2, type: 3}
-    preferedPoint: {x: 150, y: 50}
-  - unit: {fileID: 8836038180662093606, guid: c647a2ba95944cf4581df0b1d8ff0363, type: 3}
-    preferedPoint: {x: 150, y: 50}
-  - unit: {fileID: 6071070471938227683, guid: 8b208d507dc66714fa2bfa919feb0eb1, type: 3}
-    preferedPoint: {x: 150, y: 50}
-  enemyUnitTire2:
-  - unit: {fileID: 3081922984709271329, guid: 362eeaea178f2404897712a9969859b2, type: 3}
-    preferedPoint: {x: 120, y: 50}
-  - unit: {fileID: 3081922984709271329, guid: 362eeaea178f2404897712a9969859b2, type: 3}
-    preferedPoint: {x: 120, y: 50}
+  enemyUnitTire1: []
+  enemyUnitTire2: []
   stageBoss:
     unit: {fileID: 8230914209139393862, guid: 1b5686ac99471d74d8600d1d51c8403d, type: 3}
     preferedPoint: {x: 150, y: 50}

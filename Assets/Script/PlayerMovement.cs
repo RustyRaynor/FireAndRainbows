@@ -11,8 +11,6 @@ public class PlayerMovement : MonoBehaviour
     PlayerDeath deathScript;
     public GameObject player;
 
-    Renderer rend;
-
     bool deathMove;
 
     enum State
@@ -26,10 +24,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         deathScript = player.GetComponent<PlayerDeath>();
-        rend = GetComponent<Renderer>();
         state = State.alive;
         deathMove = false;
-        rend.material.shader = Shader.Find("TranyHorse");
     }
 
     void Update()
@@ -45,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
         switch (state)
         {
             case State.alive:
-                //rend.material.SetFloat("_Shift", 2);
                 if (Input.GetKeyDown(KeyCode.Space))AliveMovement();
                 break;
             case State.dead:
