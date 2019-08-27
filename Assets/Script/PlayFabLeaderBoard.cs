@@ -173,6 +173,13 @@ public class PlayFabLeaderBoard : MonoBehaviour {
 
 	void OnGetLeaderBoard(GetLeaderboardResult result)
 	{
+        LeaderboardRaw[] allLBObjects = LeaderBoardRawParent.GetComponentsInChildren<LeaderboardRaw>();
+
+        for (int n = 0; n < allLBObjects.Length; n++)
+        {
+            Destroy(allLBObjects[n].gameObject);
+        }
+
         int i = 0;
         bool me = false;
 		foreach (var playerData in result.Leaderboard)

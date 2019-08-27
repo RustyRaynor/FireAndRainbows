@@ -32,4 +32,13 @@ public class ScoreCounter : MonoBehaviour
     {
         timeScore += 2;
     }
+
+    public void Reset()
+    {
+         InvokeRepeating("PerSecondScore", 1.0f, 1.0f);
+         score = 0;
+         timeScore = 0;
+         enemyScore = 0;
+    }
+
 }

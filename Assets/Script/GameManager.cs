@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public Stage[] stageList;
     float spawnX;
     [SerializeField] int currentStage, enemyWaves;
+    public Transform allEnemyHolder;
+    public static Transform enemyHolder;
 
     [Header("Spwan Control")]
     public static bool canSpawn;
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        enemyHolder = allEnemyHolder;
         gameOnPlay = true;
         canSpawn = true;
         spawnX = Screen.width/10 + Screen.width;
@@ -70,8 +73,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if(Run){
-
-         
 
             canStop = playerDead;
 
@@ -156,6 +157,16 @@ public class GameManager : MonoBehaviour
 
     public void Reset()
     {
+        allEnemyHolder.gameObject.SetActive(false);
+        Transform[] allEnemies = allEnemyHolder.gameObject.GetComponentsInChildren<Transform>();
+        for (int i = 0; i < allEnemies.Length; i++)
+        {
+            if(allEnemies[i] != allEnemyHolder)Destroy(allEnemies[i].gameObject);
+        }
+
+        allEnemyHolder.gameObject.SetActive(true);
+        canSpawn = true;
+      scoreCounter.Reset();
       Destroy(playerUni);
         SpawnPlayer();
        playerUni.SetActive(true);
@@ -169,7 +180,7 @@ public class GameManager : MonoBehaviour
         gameMenu.SetActive(true);
 
         playerDead = false;
-        Run = false;
+        Run = true;
         gameFinish.SetActive(false);
         stage.bossDefeated = false;
     } 
