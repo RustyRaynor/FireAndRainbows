@@ -14,8 +14,6 @@ public class PlayerMovement : MonoBehaviour
     Renderer rend;
 
     bool deathMove;
-    [SerializeField]
-    GameObject jumpSound;
 
     enum State
     {
@@ -32,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
         state = State.alive;
         deathMove = false;
         rend.material.shader = Shader.Find("TranyHorse");
-        jumpSound.SetActive(false);
     }
 
     void Update()
@@ -60,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb2d.velocity = Vector2.zero;
         rb2d.AddForce(transform.up * upMovement, ForceMode2D.Impulse);
-        jumpSound.SetActive(true);
     }
     
     void DeadMovement()
@@ -75,8 +71,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Reset()
-    {
-        Destroy(this.gameObject);
-    }
 }

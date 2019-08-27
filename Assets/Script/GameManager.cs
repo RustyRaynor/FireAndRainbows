@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
 
     ScoreCounter score;
+    Statemanager stage;
 
     public bool playerDead;
 
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
         SpawnPlayer();
         deathScript = player.GetComponent<PlayerDeath>();
         score = GetComponent<ScoreCounter>();
+        stage = GetComponent<Statemanager>();
     }
 
     public void StartGame()
@@ -75,7 +77,6 @@ public class GameManager : MonoBehaviour
 
             if(gameOnPlay && currentStage >= stageList.Length)
             {
-                EndGame();
                 gameOnPlay = false;
             }
             
@@ -127,11 +128,6 @@ public class GameManager : MonoBehaviour
         enemyWaves = 0;
     }
 
-    void EndGame()
-    {
-
-    }
-
     public void PlayerDead()
     {
         gameMenu.SetActive(false);
@@ -168,12 +164,14 @@ public class GameManager : MonoBehaviour
        currentStage = 0;
        enemyWaves = 0;
 
+        gameOnPlay = true;
+
         gameMenu.SetActive(true);
 
         playerDead = false;
         Run = false;
         gameFinish.SetActive(false);
-
+        stage.bossDefeated = false;
     } 
 
 }

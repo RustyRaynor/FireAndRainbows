@@ -26,6 +26,10 @@ public class Statemanager : MonoBehaviour
         {
             state = State.lava;
         }
+        else
+        {
+            state = State.good;
+        }
 
         switch (state)
         {
