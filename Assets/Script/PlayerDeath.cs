@@ -6,12 +6,10 @@ public class PlayerDeath : MonoBehaviour
 {
     public bool playerDead;
     public GameObject trail;
-    public GameObject deathsound;
     // Start is called before the first frame update
     void Start()
     {
         playerDead = false;
-        deathsound.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,7 +21,6 @@ public class PlayerDeath : MonoBehaviour
             trail.active = false;
             playerDead = true;
             GameObject.Find("GameManager").GetComponent<GameManager>().PlayerDead();
-            //deathsound.SetActive(true);
         }
     }
 
