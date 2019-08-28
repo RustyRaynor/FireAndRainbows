@@ -44,7 +44,8 @@ public class PlayerMovement : MonoBehaviour
         switch (state)
         {
             case State.alive:
-                if (Input.GetKeyDown(KeyCode.Space))AliveMovement();
+                if (Input.GetKeyDown(KeyCode.Space))
+                    AliveMovement();
                 break;
             case State.dead:
                 DeadMovement();
