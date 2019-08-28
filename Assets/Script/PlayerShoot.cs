@@ -7,6 +7,8 @@ public class PlayerShoot : MonoBehaviour
     public GameObject laser;
     public GameObject spawn;
 
+    public AudioSource sound; 
+
     float lastFire = 0;
     public float fireRate;
     // Start is called before the first frame update
@@ -18,7 +20,7 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             Shoot();
         }
@@ -31,6 +33,7 @@ public class PlayerShoot : MonoBehaviour
             lastFire = Time.time + fireRate;
             Vector2 spawnPosition = new Vector2(spawn.transform.position.x, spawn.transform.position.y);
             Instantiate(laser, spawnPosition, spawn.transform.rotation);
+            sound.Play();
         }
     }
 }

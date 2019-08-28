@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     ScoreCounter score;
     Statemanager stage;
 
+    public AudioSource music;
+
     public bool playerDead;
 
     public static bool canStop;
@@ -58,6 +60,8 @@ public class GameManager : MonoBehaviour
         deathScript = player.GetComponent<PlayerDeath>();
         score = GetComponent<ScoreCounter>();
         stage = GetComponent<Statemanager>();
+
+        music.Play();
     }
 
     public void StartGame()
@@ -67,11 +71,16 @@ public class GameManager : MonoBehaviour
         mainMenu.SetActive(false);
         gameMenu.SetActive(true);
         initialize = true;
-
+        score.startCount = true;
     }
 
     void Update()
     {
+        if(playerDead  == true)
+        {
+            music.Stop();
+        }
+
         if(Run){
 
             canStop = playerDead;
@@ -157,6 +166,8 @@ public class GameManager : MonoBehaviour
 
     public void Reset()
     {
+        music.Play();
+
         allEnemyHolder.gameObject.SetActive(false);
         Transform[] allEnemies = allEnemyHolder.gameObject.GetComponentsInChildren<Transform>();
         for (int i = 0; i < allEnemies.Length; i++)

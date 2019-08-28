@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float upMovement; // 6 is best 
     Rigidbody2D rb2d;
 
-    AudioSource sound;
+    public AudioSource sound;
 
     PlayerDeath deathScript;
     public GameObject player;
@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         deathScript = player.GetComponent<PlayerDeath>();
-        sound = GetComponent<AudioSource>();
+
         state = State.alive;
         deathMove = false;
     }
@@ -44,7 +44,8 @@ public class PlayerMovement : MonoBehaviour
         switch (state)
         {
             case State.alive:
-                if (Input.GetKeyDown(KeyCode.Space))AliveMovement();
+                if (Input.GetKeyDown(KeyCode.Space))
+                    AliveMovement();
                 break;
             case State.dead:
                 DeadMovement();
@@ -69,5 +70,4 @@ public class PlayerMovement : MonoBehaviour
             deathMove = true;
         }
     }
-
 }

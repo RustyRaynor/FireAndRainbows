@@ -10,6 +10,8 @@ public class ScoreCounter : MonoBehaviour
     public int timeScore = 0;
     public int enemyScore = 0;
 
+    public bool startCount = false;
+
     GameManager manager;
     // Start is called before the first frame update
     void Start()
@@ -30,7 +32,10 @@ public class ScoreCounter : MonoBehaviour
     }
     void PerSecondScore()
     {
-        timeScore += 2;
+        if (startCount == true)
+        {
+            timeScore += 2;
+        }
     }
 
     public void Reset()
